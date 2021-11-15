@@ -13,14 +13,14 @@
                         @method("PUT")
                         <div class="form-group">
                           <label for="title">Titolo</label>
-                          <input type="text" class="form-control @error("title") is-invalid @enderror" name="title" id="title" placeholder="Inserire il titolo" value="{{$post["title"]}}">
+                          <input type="text" class="form-control @error("title") is-invalid @enderror" name="title" id="title" placeholder="Inserire il titolo" value="{{old("title") ? old("title") : $post["title"]}}">
                             @error('title')
                                 <div class="alert alert-danger">{{$message}}</div>
                             @enderror
                         </div>
                         <div class="form-group">
                             <label for="content">Contenuto</label>
-                            <textarea class="form-control @error("content") is-invalid @enderror" name="content" id="content" cols="30" rows="10" placeholder="Inserire il contenuto">{{$post["content"]}}</textarea>
+                            <textarea class="form-control @error("content") is-invalid @enderror" name="content" id="content" cols="30" rows="10" placeholder="Inserire il contenuto">{{old("content") ? old("content") : $post["content"]}}</textarea>
                             @error('content')
                                 <div class="alert alert-danger">{{$message}}</div>
                             @enderror
