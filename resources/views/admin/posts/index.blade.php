@@ -33,6 +33,9 @@
                                     <a href="{{route("admin.posts.show", $post["id"])}}">
                                         <button class="btn btn-primary" type="button">Visualizza</button>
                                     </a>
+                                    <a href="{{route("admin.posts.edit", $post["id"])}}">
+                                        <button class="btn btn-warning" type="button">Modifica</button>
+                                    </a>
                                     <form action="{{route("admin.posts.destroy", $post["id"])}}" method="POST">
                                         @csrf
                                         @method("DELETE")
