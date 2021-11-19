@@ -31,14 +31,14 @@
                                 <td>{{$post["title"]}}</td>
                                 <td>{{$post["slug"]}}</td>
                                 <td>{{isset($post["category"]["name"]) ? $post["category"]["name"] : ""}}</td>
-                                <td>
-                                    <a href="{{route("admin.posts.show", $post["id"])}}">
-                                        <button class="btn btn-primary" type="button">Visualizza</button>
+                                <td  class="d-flex">
+                                    <a class="p-2" href="{{route("admin.posts.show", $post["id"])}}">
+                                        <button class="btn btn-primary p-2" type="button">Visualizza</button>
                                     </a>
-                                    <a href="{{route("admin.posts.edit", $post["id"])}}">
-                                        <button class="btn btn-warning" type="button">Modifica</button>
+                                    <a class="p-2" href="{{route("admin.posts.edit", $post["id"])}}">
+                                        <button class="btn btn-warning p-2" type="button">Modifica</button>
                                     </a>
-                                    <form action="{{route("admin.posts.destroy", $post["id"])}}" method="POST">
+                                    <form class="p-2" action="{{route("admin.posts.destroy", $post["id"])}}" method="POST">
                                         @csrf
                                         @method("DELETE")
                                         <button type="submit" class="btn btn-danger">Elimina</button>

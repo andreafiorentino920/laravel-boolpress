@@ -29,7 +29,7 @@
                                 <td>{{$category["id"]}}</td>
                                 <td>{{$category["name"]}}</td>
                                 <td>{{$category["slug"]}}</td>
-                                <td>
+                                <td class="d-flex">
                                     <a href="{{route("admin.categories.show", $category["id"])}}">
                                         <button class="btn btn-primary" type="button">Visualizza</button>
                                     </a>
