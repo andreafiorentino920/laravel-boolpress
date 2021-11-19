@@ -18,27 +18,25 @@
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">Title</th>
+                                <th scope="col">Name</th>
                                 <th scope="col">Slug</th>
-                                <th scope="col">Category</th>
                                 <th scope="col">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($posts as $post)
+                            @foreach ($categories as $category)
                             <tr>
-                                <td>{{$post["id"]}}</td>
-                                <td>{{$post["title"]}}</td>
-                                <td>{{$post["slug"]}}</td>
-                                <td>{{isset($post["category"]["name"]) ? $post["category"]["name"] : ""}}</td>
+                                <td>{{$category["id"]}}</td>
+                                <td>{{$category["name"]}}</td>
+                                <td>{{$category["slug"]}}</td>
                                 <td>
-                                    <a href="{{route("admin.posts.show", $post["id"])}}">
+                                    <a href="{{route("admin.categories.show", $category["id"])}}">
                                         <button class="btn btn-primary" type="button">Visualizza</button>
                                     </a>
-                                    <a href="{{route("admin.posts.edit", $post["id"])}}">
+                                    <a href="{{route("admin.categories.edit", $category["id"])}}">
                                         <button class="btn btn-warning" type="button">Modifica</button>
                                     </a>
-                                    <form action="{{route("admin.posts.destroy", $post["id"])}}" method="POST">
+                                    <form action="{{route("admin.categories.destroy", $category["id"])}}" method="POST">
                                         @csrf
                                         @method("DELETE")
                                         <button type="submit" class="btn btn-danger">Elimina</button>
