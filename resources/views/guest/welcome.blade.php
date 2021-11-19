@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    <a href="{{ route('admin.home') }}">CLICCA QUI</a>
                 </div>
 
                 <div class="links">
