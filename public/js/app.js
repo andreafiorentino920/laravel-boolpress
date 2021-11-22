@@ -37268,7 +37268,20 @@ module.exports = function(module) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+/**
+ * First we will load all of this project's JavaScript dependencies which
+ * includes Vue and other libraries. It is a great starting point when
+ * building robust, powerful web applications using Vue and Laravel.
+ */
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+
+var deleteButtons = document.querySelectorAll(".btn-delete");
+var inputDeleteID = document.getElementById("delete-id");
+deleteButtons.forEach(function (elm) {
+  elm.addEventListener("click", function () {
+    inputDeleteID.value = this.getAttribute("data-id");
+  });
+});
 
 /***/ }),
 
