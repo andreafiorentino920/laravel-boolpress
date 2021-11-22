@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div>
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -21,6 +21,7 @@
                                 <th scope="col">Title</th>
                                 <th scope="col">Slug</th>
                                 <th scope="col">Category</th>
+                                <th scope="col">Tags</th>
                                 <th scope="col">Action</th>
                             </tr>
                         </thead>
@@ -31,6 +32,15 @@
                                 <td>{{$post["title"]}}</td>
                                 <td>{{$post["slug"]}}</td>
                                 <td>{{isset($post["category"]["name"]) ? $post["category"]["name"] : ""}}</td>
+                                <td>
+                                    <div class="tag-container d-flex">
+                                        @if (count($post["tags"]) > 0)
+                                        @foreach ($post["tags"] as $tag)
+                                            <span class="badge badge-primary">{{$tag["name"]}}</span>
+                                        @endforeach
+                                    @endif
+                                    </div>
+                                </td>
                                 <td  class="d-flex">
                                     <a class="p-2" href="{{route("admin.posts.show", $post["id"])}}">
                                         <button class="btn btn-primary p-2" type="button">Visualizza</button>

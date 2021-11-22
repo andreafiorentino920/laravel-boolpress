@@ -12,11 +12,12 @@
                     @if ($post["category"])
                     <h3>Categoria: {{$post["category"]["name"]}}</h3>
                     @endif
-                    @if ($post["tags"])
+
+                    @if (count($post["tags"]) > 0)
                     <h3>Tags:</h3>
-                    @foreach ($post["tags"] as $tag)
-                        <span class="badge badge-primary">{{$tag["name"]}}</span>
-                    @endforeach
+                        @foreach ($post["tags"] as $tag)
+                            <span class="badge badge-primary">{{$tag["name"]}}</span>
+                        @endforeach
                     @endif
                     <p>{{$post["content"]}}</p>
                 </div>
